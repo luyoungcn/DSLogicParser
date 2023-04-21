@@ -55,19 +55,22 @@ while line:
         index = 0
 
     if index == 0:
-        print("\n")
+        #print("\n")
+        print("\nindex:  01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16")
 
-    if index%16 == 0:
+    #if index%16 == 0:
+    if loop%16 == 0:
         print("0X{:04X}".format(index),end=": ")
 
 
     line = line.strip('\n')
-    if loop < 15:
+    if loop < 16:
         print(line,end=" ")
-        loop+=1
-    else:
-        print()
-        loop = 0
+        if loop == 15:
+            print()
+            loop = 0
+        else:
+            loop+=1
 
     index+=1
     #line = f.readline()
